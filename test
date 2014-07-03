@@ -1,1 +1,113 @@
-sfds
+<?php
+session_start();
+
+include_once("../_constants.php");
+include_once("../_setup_db.php");
+include_once("../_setup_language.php");
+include_once("../_setup_user.php");
+include_once("../_setup_gui.php");
+include_once("../_setup_system.php");
+include_once("../_document_handler.php");
+
+$user = spuser_current_user();  
+
+$lang_id = check_get_post("lang_id");
+
+ $lang_info = spdb_select_one("select * from sp_lang_type where id =".spdb_safe($lang_id)); //collects data with the specific languange
+ 
+ $page = check_get_post("page"); 
+ $_SESSION['admin_edit_lang_page']  = $page;  //It will remember urrent pagenumber even after refresh or post
+ 
+ $phrases = spdb_select("select * from sp_lang"); //collects all data from sp_lang
+ $count = 0;
+while($phrase = check_before_fetch_array($phrases)) //counts total items in sp_lang
+ {
+    $count++;
+}
+
+    $limit = 15; // sets the of shown items
+     
+   $pages = ceil($count/$limit); // count how many pages the query contains
+   $start_from = ($page-1)*$limit; // decide where to start from according to page and limit
+   
+   //These values are for the pagination loop
+   $loopstartAt = 1; // default value to start the pagination loop from
+    if($page > $pages-5) { // if page is bigger than total "pages-5" the loop will start from $pages-8
+              $loopstartAt = $pages-8;
+    }  else if($page-3 < $page && ($page-3 > 0)){ //if page is bigger than "page-3" and "page-3" is bigger than 0 the loop will start att "page-3"
+        $loopstartAt = $page-3;
+    } 
+
+    $phrasesshow =  spdb_select("select * from sp_lang order by phrase LIMIT ".$start_from.", ".$limit);
+
+    ?>
+
+ 
+
+     <li class="textbox">
+            <img align="left" width="60px" height="60px" src="<?=$lang_info["image"]?>"/>
+            <span class="header"><?=$lang_info["name"]?></span>
+            <p><?=splang("Hantera översätting")?></p>
+        </li>
+        <?
+        while($phrase = check_before_fetch_array($phrasesshow)) //this loop will go on while there are items to collect
+        {         
+        ?>
+                <li class="textbox">
+                <span class="header"><?=$phrase["phrase"]?></span>
+                <input type="hidden" name="phraseids[]" value="<?=$phrase["id"]?>"/>
+                <textarea name="phrases[]" rows="2"><?=lang_get_translation($phrase["id"], $lang_id)?></textarea>
+                </li>
+
+        <? 
+        }
+        ?>
+
+    
+    
+    <li style='margin-top:0.5em;margin-bottom:0.5em; text-align: center; font-size: 0.9em;' >
+        <span>
+             <? if ($page != 1) //iif page is not the first page a arrow will appear
+                {
+                    ?>
+                    <a href="#" onclick="getPhrases(<?=$page-1?>,<?=$lang_id?>)" style="text-decoration:none;"><span style="font-size:1.5em">&laquo;</span></a> 
+                    <? if ($page > 4) // If page is bigger than 4 dots and "1" will appear
+                        {
+                        ?>
+                            <a href="#" onclick="getPhrases(1,<?=$lang_id?>)" style="text-decoration:none;"><span>1</span></a> ...
+                    <? } ?>
+               <? } ?> 
+                 
+        <?    
+        for ($i = $loopstartAt; $i <= $pages; $i++) 
+        {
+            ?>
+                    <? if ($i == $page) //if $i is current page it will not add a link but the it will make the current pagenumber bigger
+                    {
+                        ?>
+                            <span id="page_<?=$i?>" style="font-size:1.5em"><?=$i?></span>
+                    <?
+                    } 
+                    else if($i > $page+4) //if i is bigger than page+4 it will break and add dots and the last pagenumber
+                    { ?>
+                             ... <a href="#" onclick="getPhrases(<?=$pages?>, <?=$lang_id?>)" style="text-decoration:none;"><span><?=$pages?></span></a>
+                    <?
+                            break;
+                   }
+                   else //if states are normal it will keep looping and add href to the  pagenumbers
+                   {  ?>
+                            <a href="#" onclick="getPhrases(<?=$i?>, <?=$lang_id?>)" style="text-decoration:none;"><span><?=$i?></span></a>
+                <?
+                   }
+                    ?>
+                <?
+           } 
+            ?>
+                <? if ($page != $pages) //if current page is not the last page a arrow will appear
+                {
+                    ?>
+                     <a href="#" onclick="getPhrases(<?=$page+1?>,<?=$lang_id?>)"  style="text-decoration:none;"><span style="font-size:1.5em">&raquo;</span></a> 
+                <?               
+                }
+                ?> 
+        </li>
