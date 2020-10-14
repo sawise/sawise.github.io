@@ -4740,19 +4740,23 @@ var page3 = {
   "previous" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
   "total" : 129
 };
-
 function playlistLoop(item){
     $.each(item, function( index, value ) {
-        var yearRegex = new RegExp("Sams [0-9]");
+        var yearRegex = new RegExp("Sams 20[0-9]");
+        var deceniumRegex = new RegExp("Sams [0-9]");
         var topRegex = new RegExp("Top");
         var mineRegex = new RegExp("Sams");
         
-        if(yearRegex.test(value.name)){
-            $("#playlist-container #decennium").append("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
+        if(yearRegex.test(value.name) && value.name != "Sams 2000+ Collection"){
+            $("#playlist-container #year").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
+        } else if(deceniumRegex.test(value.name)){
+            $("#playlist-container #decennium").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
-            $("#playlist-container #top").append("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
+            $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
         } else if(value.name == "Sams Main Collection"){
-            $("#playlist-container #main").prepend("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
+           $("#playlist-container #main").prepend("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+        } else {
+            $("#playlist-container #to-be-added").append(value.name+", ");
         }
        });
 }
