@@ -4667,11 +4667,11 @@ function playlistLoop(item){
         var mineRegex = new RegExp("Sams");
         
         if(yearRegex.test(value.name)){
-            $("#playlist-container #decennium").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+            $("#playlist-container #decennium").append("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
-            $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+            $("#playlist-container #top").append("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(value.name == "Sams Main Collection"){
-            $("#playlist-container #main").prepend("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+            $("#playlist-container #main").prepend("<div class='playlist-item'><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         }
        });
 }
