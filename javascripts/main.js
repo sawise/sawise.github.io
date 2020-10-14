@@ -4755,15 +4755,15 @@ function playlistLoop(item){
             $("#playlist-container #year").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
             //$("#playlist-container #year").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(deceniumRegex.test(value.name)){
-            $("#playlist-container #decennium").append("<div class='playlist-item'><h3>"+value.name+"</h3>"+images+"<p>"+value.tracks.total+" tracks</p></div>");
+            $("#playlist-container #decennium").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
             
           //  $("#playlist-container #decennium").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
-            $("#playlist-container #top").append("<div class='playlist-item'><h3>"+value.name+"</h3>"+images+"<p>"+value.tracks.total+" tracks</p></div>");
+            $("#playlist-container #top").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
             
            // $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
         } else if(value.name == "Sams Main Collection"){
-            $("#playlist-container #main").append("<div class='playlist-item'><h3>"+value.name+"</h3>"+images+"<p>"+value.tracks.total+" tracks</p></div>");
+            $("#playlist-container #main").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
             
           // $("#playlist-container #main").prepend("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
         }
