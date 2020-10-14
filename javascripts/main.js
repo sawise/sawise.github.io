@@ -1,5 +1,4 @@
-
-        var page1 = {
+var page1 = {
   "href" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=0&limit=50",
   "items" : [ {
     "collaborative" : false,
@@ -60,7 +59,7 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "MTYwMjY1MjQzOCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+    "snapshot_id" : "MTYwMjY1NTMyNCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/37i9dQZF1DWZnTL4tryWoU/tracks",
       "total" : 200
@@ -373,7 +372,7 @@
     },
     "primary_color" : null,
     "public" : true,
-    "snapshot_id" : "MTYwMjY1MjQzOCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+    "snapshot_id" : "MTYwMjY1NTMyNCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
     "tracks" : {
       "href" : "https://api.spotify.com/v1/playlists/37i9dQZF1DXc4CrXgl8cum/tracks",
       "total" : 80
@@ -857,6 +856,88 @@
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:1uldMDYpBC1roz9z5obtUy"
+  }, {
+    "collaborative" : false,
+    "description" : "",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/7aGv8LuVP9B1nUuCZgBxPP"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/7aGv8LuVP9B1nUuCZgBxPP",
+    "id" : "7aGv8LuVP9B1nUuCZgBxPP",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/ab67616d0000b273373a46efca570f83dd78313fab67616d0000b2737bc7cf96a56f0df9d89a505eab67616d0000b2737d8f3506359962a104a06750ab67616d0000b273f2a5b943d459d18e68a52801",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/ab67616d0000b273373a46efca570f83dd78313fab67616d0000b2737bc7cf96a56f0df9d89a505eab67616d0000b2737d8f3506359962a104a06750ab67616d0000b273f2a5b943d459d18e68a52801",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/ab67616d0000b273373a46efca570f83dd78313fab67616d0000b2737bc7cf96a56f0df9d89a505eab67616d0000b2737d8f3506359962a104a06750ab67616d0000b273f2a5b943d459d18e68a52801",
+      "width" : 60
+    } ],
+    "name" : "Sams 2018 Collection",
+    "owner" : {
+      "display_name" : "Sam Sammyboy Jonsson",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/hggf_374"
+      },
+      "href" : "https://api.spotify.com/v1/users/hggf_374",
+      "id" : "hggf_374",
+      "type" : "user",
+      "uri" : "spotify:user:hggf_374"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "MTMwLGRhNTZmNWYxNDY1NjU3NTA3Y2YzMzZkYzIyZWViOWI2NDdmNzlhOTA=",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/7aGv8LuVP9B1nUuCZgBxPP/tracks",
+      "total" : 122
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:7aGv8LuVP9B1nUuCZgBxPP"
+  }, {
+    "collaborative" : false,
+    "description" : "",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/playlist/7ckCSBBVdKTgc3xXVAudYv"
+    },
+    "href" : "https://api.spotify.com/v1/playlists/7ckCSBBVdKTgc3xXVAudYv",
+    "id" : "7ckCSBBVdKTgc3xXVAudYv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://mosaic.scdn.co/640/ab67616d0000b27341ed96556a397894e0b0a077ab67616d0000b2734a93c3bb3a96ef1b79f4cb41ab67616d0000b2736ed1815cb3ca10debd18b4c1ab67616d0000b2739ddcf67070c295e7d5f7ce69",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://mosaic.scdn.co/300/ab67616d0000b27341ed96556a397894e0b0a077ab67616d0000b2734a93c3bb3a96ef1b79f4cb41ab67616d0000b2736ed1815cb3ca10debd18b4c1ab67616d0000b2739ddcf67070c295e7d5f7ce69",
+      "width" : 300
+    }, {
+      "height" : 60,
+      "url" : "https://mosaic.scdn.co/60/ab67616d0000b27341ed96556a397894e0b0a077ab67616d0000b2734a93c3bb3a96ef1b79f4cb41ab67616d0000b2736ed1815cb3ca10debd18b4c1ab67616d0000b2739ddcf67070c295e7d5f7ce69",
+      "width" : 60
+    } ],
+    "name" : "Sams 2019 Collection",
+    "owner" : {
+      "display_name" : "Sam Sammyboy Jonsson",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/user/hggf_374"
+      },
+      "href" : "https://api.spotify.com/v1/users/hggf_374",
+      "id" : "hggf_374",
+      "type" : "user",
+      "uri" : "spotify:user:hggf_374"
+    },
+    "primary_color" : null,
+    "public" : true,
+    "snapshot_id" : "ODAsMDBlOGExNjRmZDcxNmQ0ZjIzMTJiNGY2MmE3NzMxMzk2YTdjOGYzZg==",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/playlists/7ckCSBBVdKTgc3xXVAudYv/tracks",
+      "total" : 85
+    },
+    "type" : "playlist",
+    "uri" : "spotify:playlist:7ckCSBBVdKTgc3xXVAudYv"
   }, {
     "collaborative" : false,
     "description" : "",
@@ -1761,7 +1842,17 @@
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:7gM8RxE6gFDwhYbyETVp6X"
-  }, {
+  } ],
+  "limit" : 50,
+  "next" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 129
+};
+
+var page2 = {
+  "href" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
+  "items" : [ {
     "collaborative" : false,
     "description" : "",
     "external_urls" : {
@@ -1827,17 +1918,7 @@
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:7HRzU5Av18aAhC49Lj1xfP"
-  } ],
-  "limit" : 50,
-  "next" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
-  "offset" : 0,
-  "previous" : null,
-  "total" : 127
-};
-
-var page2 = {
-  "href" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
-  "items" : [ {
+  }, {
     "collaborative" : false,
     "description" : "",
     "external_urls" : {
@@ -3597,7 +3678,17 @@ var page2 = {
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:6DWQN8iiCFQbqQIthbq90n"
-  }, {
+  } ],
+  "limit" : 50,
+  "next" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=100&limit=50",
+  "offset" : 50,
+  "previous" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=0&limit=50",
+  "total" : 129
+};
+
+var page3 = {
+  "href" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=100&limit=50",
+  "items" : [ {
     "collaborative" : false,
     "description" : "",
     "external_urls" : {
@@ -3679,17 +3770,7 @@ var page2 = {
     },
     "type" : "playlist",
     "uri" : "spotify:playlist:1tW1CYxKFNZa1QN6fEGNOC"
-  } ],
-  "limit" : 50,
-  "next" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=100&limit=50",
-  "offset" : 50,
-  "previous" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=0&limit=50",
-  "total" : 127
-};
-
-var page3 = {
-  "href" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=100&limit=50",
-  "items" : [ {
+  }, {
     "collaborative" : false,
     "description" : "",
     "external_urls" : {
@@ -4657,7 +4738,7 @@ var page3 = {
   "next" : null,
   "offset" : 100,
   "previous" : "https://api.spotify.com/v1/users/hggf_374/playlists?offset=50&limit=50",
-  "total" : 127
+  "total" : 129
 };
 
 function playlistLoop(item){
