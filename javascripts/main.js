@@ -4746,7 +4746,7 @@ function playlistLoop(item){
         var deceniumRegex = new RegExp("Sams [0-9]");
         var topRegex = new RegExp("Top");
         var mineRegex = new RegExp("Sams");
-        var images = "<img style='width:auto; height:200px;'src='"+value.images[0].url+"'>";
+        var images = "<img src='"+value.images[0].url+"'>";
         
         $link_start = "<a href='"+value.external_urls.spotify+"' target='_blank'>";
         $link_end ="</a>";
