@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     
-    <title>Bouncin Sam 2 - Sam's GIF and Art Studio</title>
+    <title>Bouncin Sam 2 - Sam's GIF and Art Studio - Sams Music Collections</title>
     <style>
       iframe{
         display:block;
@@ -74,6 +74,9 @@
       #playlist-container iframe{
       display:inline-block !important}
       
+      .toggle{
+        display:none;
+      }
       
       .playlist-item{
         display:inline-block;
@@ -104,6 +107,29 @@
         display:block;
         height:80%;
       }
+
+      .menu {
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 10px;
+      }
+
+      .button{
+        cursor: pointer;
+      }
+      .menu p{
+        color:#000;
+        display:inline-block;
+        margin:10px;
+        font-weight:bold;
+      }
+      .menu p.toggled{
+        text-decoration: underline;
+        font-weight:bold;
+      }
+
+      .main-text img{
+          width:200px;
+        }
       
       @media (max-width: 992px){
         #main_content h1,#main_content h2{
@@ -126,6 +152,10 @@
 
         #playlist-container h1{
       margin: 60px 0 10px 0;
+      }
+      .main-text img{
+        width:31%;
+      }
       }
       @media (max-width: 700px){
         .playlist-item{  
@@ -153,11 +183,31 @@
 
     <div class="container">
       <section id="main_content">
-        <h3>Welcome!</h3>
-            <h2>Bouncin Sam 2</h2>
+      <div class="menu">
+        <p class="bouncin button">Bouncin Sam 2</p>
+        <p class="gif button">Sam's GIF and Art Studio </p>
+        <p class="music button">Sam's Music Collections</p>
+      </div>
+            <div class="main-text">
+          <p>Here you can see my ongoing projects, 
+          I do everything from mobile games to music collections. 
+          Click on the projects above (or on the icons below) to see more details</p>
+          <img class="bouncin button" src="https://lh3.googleusercontent.com/oLWUeCX2hkqNIaackWbEQSp3Pp1qZevhljMUUjugLkSJasv4H974lxjQqVDFUH1kRXw=s180-rw"/>
+          <img class="gif button" src="https://scontent.fume1-1.fna.fbcdn.net/v/t1.0-9/119230629_100563691801278_5297343648469064301_o.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=kT1nqf133BQAX_eoK43&_nc_ht=scontent.fume1-1.fna&oh=8abd9783b61b625e974889b587c7b3f1&oe=5FAF2A59"/>
+          <img class="music button" src="https://scontent.fume1-1.fna.fbcdn.net/v/t1.0-9/120408141_100291391850510_4071083865260740475_o.jpg?_nc_cat=101&_nc_sid=09cbfe&_nc_ohc=iMdLtcq8ppUAX9rOq2E&_nc_ht=scontent.fume1-1.fna&oh=2c5fa2db6274941a3b9132fd2520cb3c&oe=5FAF9F8D"/>
+          </div>
+            
+            <div class="bouncin toggle">
+              <div class="social">
+              <a href="https://www.facebook.com/bouncin.sam/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
+              <a href="https://www.instagram.com/bouncin.sam/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
+            </div>
+             
+        
+            
         <iframe style="height: 800px;
     width: 500px;" src="https://www.youtube.com/embed/U3pyr4LgJeM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         <div class="store">
+    <div class="store">
             <a href="https://play.google.com/store/apps/details?id=com.samnor.BouncinSam2">
               <img src="https://seeklogo.net/wp-content/uploads/2016/09/get-it-on-google-play.png">
             </a> 
@@ -165,23 +215,19 @@
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png">
             </a>
         </div>
-        
-            <div class="social">
-              <a href="https://www.facebook.com/bouncin.sam/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
-              <a href="https://www.instagram.com/bouncin.sam/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
-            </div>
-        <hr/>
-         <h2>Sam's GIF and Art Studio</h2>
-        <iframe style="height: 800px;
-    width: 500px;" src="https://www.youtube.com/embed/FVI2Ps_ufyo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe style="width: 1000px;height: 600px;" src="https://www.youtube.com/embed/dcqYOp5tuGw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="social">
-          <a href="https://www.facebook.com/sams.gifandart.studio/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
-          <a href="https://www.instagram.com/sams.gifandart.studio/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
+          </div>
+         <div class="gif toggle">
+          <div class="social">
+            <a href="https://www.facebook.com/sams.gifandart.studio/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
+            <a href="https://www.instagram.com/sams.gifandart.studio/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
+          </div>
+          <iframe style="height: 800px;
+      width: 500px;" src="https://www.youtube.com/embed/FVI2Ps_ufyo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe style="width: 1000px;height: 600px;" src="https://www.youtube.com/embed/dcqYOp5tuGw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
         </div>
-        <hr/>
-        <div id="playlist-container" style="text-align:center">
-          <h2>Sams Music Collections</h2>
+        <div id="playlist-container" class="music toggle" style="text-align:center">
+         
           <div class="social">
               <a href="https://www.facebook.com/sams.muusic.collections/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
               <a href="https://www.instagram.com/sams.muusic.collections/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>

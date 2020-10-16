@@ -4782,6 +4782,28 @@ $(document).ready(function(){
     playlistLoop(page1.items);
     playlistLoop(page2.items);
     playlistLoop(page3.items);
+    $(".button").click(function(){
+      $(".main-text").hide();
+      var classList = $(this).attr('class').split(/\s+/);
+      $(".toggle").hide();
+      $(".button").removeClass("toggled");
+        $.each(classList, function(index, item) {
+        if (item != 'button') {
+          if($('.'+item+".button").hasClass("toggled")){
+            $('.'+item+".toggle").hide();
+            $('.'+item+".button").removeClass("toggled");
+            $('.'+item+".toggle").removeClass("toggled");
+          } else {
+            $('.'+item+".toggle").show();
+            $('.'+item+".button").addClass("toggled");
+            $('.'+item+".toggle").addClass("toggled");
+          }
+        }
+      });
+      if($(".toggled").length == 0){
+        $(".main-text").show();
+      }
+    });
 });
 
 
