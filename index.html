@@ -78,26 +78,63 @@
       .playlist-item{
         display:inline-block;
         margin:20px;  
-        width:29%; height:auto;
+        width:200px; 
+        height:300px;
+        margin-bottom:40px;
+        float:left;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgba(255,255,255,0.5);
       }
+      .playlist-item h3,.playlist-item p{
+        color:#000;
+        font-weight: bold;
+      }
+
+      .playlist-item h3{
+        font-size:15px !important;
+      }
+
       .playlist-item img{
-        height:auto;
-        width:100%;
+        max-height:70%;
+      }
+
+      .playlist-item a{
+        display:block;
+        height:80%;
       }
       
       @media (max-width: 992px){
         #main_content h1,#main_content h2{
-          font-size:60px;
+          font-size:60px !important;
         }
         #main_content h3{
-          font-size:50px;
+          font-size:40px !important;
         }
         .playlist-item{  
-            width: 48%;
+            width: 45%;
             margin: 5px;
+            height:700px;
         }
         p{  
             font-size:40px;
+        }
+        .playlist-item img{
+          max-height:60%;
+        }
+
+        #playlist-container h1{
+      margin: 60px 0 10px 0;
+      }
+      @media (max-width: 700px){
+        .playlist-item{  
+            width: 100%;
+            margin: 0;
+            margin-bottom: 5px;
+            height:400px;
+        }
+        .playlist-item p{  
+            margin:5px;
         }
       }
     </style>
@@ -143,17 +180,19 @@
         </div>
         <hr/>
         <div id="playlist-container" style="text-align:center">
-          <h2>Sams Spotify Collection</h2>
+          <h2>Sams Music Collections</h2>
           <div class="social">
               <a href="https://www.facebook.com/sams.muusic.collections/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
               <a href="https://www.instagram.com/sams.muusic.collections/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
             </div>
-        <div id="main"><p class="more"></p></div>
-        <div id="top"><h1>Yearly toplist</h1><p class="more"></p></div>
-        <div id="decennium"><h1>Sams Collection by decade</h1><p class="more"></p></div>
-          <div id="year"><h1>Sams Collection by years (2011+)</h1><p class="more"></p></div>
-        
-      <h3>More to come...</h3>
+        <div id="main"></div>
+        <div id="top"><div style="clear:both"></div><h1>Yearly toplist</h1></div>
+        <div id="decennium"><div style="clear:both"></div><h1>Sams Collection by decade</h1></div>
+        <div id="year"><div style="clear:both"></div><h1>Sams Collection by years (2011+)</h1></div>
+        <div id="artist"><div style="clear:both"></div><h1>Sams Collection by artists</h1></div>
+        <div id="genre"><div style="clear:both"></div><h1>Sams Collection by genre</h1></div>
+        <div id="tv-movie-game"><div style="clear:both"></div><h1>Sams Collection by tv/movie/game</h1></div>
+        <div id="mood"><div style="clear:both"></div><h1>Sams Collection by mood</h1></div>
         </div>
     </div>
 

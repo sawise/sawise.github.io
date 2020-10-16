@@ -4742,31 +4742,40 @@ var page3 = {
 };
 function playlistLoop(item){
     $.each(item, function( index, value ) {
+      str = value.name;
         var yearRegex = new RegExp("Sams 20[0-9]");
         var deceniumRegex = new RegExp("Sams [0-9]");
         var topRegex = new RegExp("Top");
         var mineRegex = new RegExp("Sams");
+        var artist = str.match(/Lindsey|U2|Chv|många/);
+        var main = str.match(/Main|relate to|must be/);
+       
+        var genre = str.match(/Forgotten fav|Dance Collection|Musical|Disney Girls|Boyband|Spanish-ish|Irish|Ballader med truck|Folkpunk|Genré Mashup|Best of BodyBalance|Cover|Instrumental|Mingelparty|Girly|Childhood|Repeating|Murloc|Ukelele\/Banjo|Synt\/Electropop|Hiphop|Dansband|Epic Music VN|Journey To Splits|Dunka-Dunka|Lugna Favoriter|Indie|Party|Powerballad|Skånska|Schlager|Sköna svenska|Summer|Reaggae|Rock|Christmas|Motown|Country|Acoustic/);
+        var tv = str.match(/Vampire|League of Legends| Bond |Pokémon|Legacies|Soundtrack|Alita|Star Wars|Marvel|Twilight|Shrek|LOTR|Game|Shadowhunters|Disney\/Pixar|The Voice|Scrubs|Idol/);
+        var mood = str.match(/Crazy Dance|Air guitar|In Your Face|Extreme mixup|smooth alarm|True Workout|Friday|Weekly Top 1s|Singalong|Drama|WAKE UP|Cooldown|Working|Harmonic|Car|Work out|Comeback|Programming|Mystical|ONDA|Super Happy|Feel good|Calm|Speedy|Running|Cleaning|Cuddle|Super calm/);
         var images = "<img src='"+value.images[0].url+"'>";
         
         $link_start = "<a href='"+value.external_urls.spotify+"' target='_blank'>";
         $link_end ="</a>";
-      
+          // $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+       
         if(yearRegex.test(value.name) && value.name != "Sams 2000+ Collection"){
             $("#playlist-container #year").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
-            //$("#playlist-container #year").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
         } else if(deceniumRegex.test(value.name)){
             $("#playlist-container #decennium").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
-            
-          //  $("#playlist-container #decennium").append("<div><iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe><p>"+value.tracks.total+" tracks</p></div>");
-        } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
-            $("#playlist-container #top").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
-            
-           // $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
-        } else if(value.name == "Sams Main Collection"){
-            $("#playlist-container #main").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
-            
-          // $("#playlist-container #main").prepend("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='500' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
-        }
+         } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
+          $("#playlist-container #top").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+      } else if(tv){
+        $("#playlist-container #tv-movie-game").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+      } else if(mood){
+        $("#playlist-container #mood").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+      }else if(genre){
+        $("#playlist-container #genre").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+      }else if(artist){
+        $("#playlist-container #artist").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+      } else if(main){
+        $("#playlist-container #main").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
+      }
        });
 }
 $(document).ready(function(){
