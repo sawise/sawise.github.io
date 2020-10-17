@@ -4741,6 +4741,7 @@ var page3 = {
   "total" : 129
 };
 function playlistLoop(item){
+  var total = 0;
     $.each(item, function( index, value ) {
       str = value.name;
         var yearRegex = new RegExp("Sams 20[0-9]");
@@ -4757,26 +4758,35 @@ function playlistLoop(item){
         
         $link_start = "<a href='"+value.external_urls.spotify+"' target='_blank'>";
         $link_end ="</a>";
-          // $("#playlist-container #top").append("<iframe src='https://open.spotify.com/embed/playlist/"+value.id+"' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>");
+        $play_button = "<div class='play-button'><img  src='images/play.png'/></div>";
        
         if(yearRegex.test(value.name) && value.name != "Sams 2000+ Collection"){
-            $("#playlist-container #year").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
+          total += total+1;
+            $("#playlist-container #year").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
         } else if(deceniumRegex.test(value.name)){
-            $("#playlist-container #decennium").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
+            $("#playlist-container #decennium").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
+            total += total+1;
          } else if(topRegex.test(value.name) && !mineRegex.test(value.name)){
-          $("#playlist-container #top").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+          total += total+1;
+          $("#playlist-container #top").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
       } else if(tv){
-        $("#playlist-container #tv-movie-game").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+        total += total+1;
+        $("#playlist-container #tv-movie-game").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
       } else if(mood){
-        $("#playlist-container #mood").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+        total += total+1;
+        $("#playlist-container #mood").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
       }else if(genre){
-        $("#playlist-container #genre").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+        total += total+1;
+        $("#playlist-container #genre").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
       }else if(artist){
-        $("#playlist-container #artist").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
+        total += total+1;
+        $("#playlist-container #artist").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");  
       } else if(main){
-        $("#playlist-container #main").append("<div class='playlist-item'>"+$link_start+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
+        total += total+1;
+        $("#playlist-container #main").append("<div class='playlist-item'>"+$link_start+$play_button+"<h3>"+value.name+"</h3>"+images+$link_end+"<p>"+value.tracks.total+" tracks</p></div>");
       }
        });
+       console.log(total);
 }
 $(document).ready(function(){
     playlistLoop(page1.items);

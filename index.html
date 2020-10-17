@@ -79,16 +79,40 @@
       }
       
       .playlist-item{
-        display:inline-block;
+        display:block;
         margin:20px;  
         width:200px; 
         height:300px;
         margin-bottom:40px;
         float:left;
+        position:relative;
         border-radius: 10px;
         padding: 10px;
-        background-color: rgba(255,255,255,0.5);
+background-color: rgba(255,255,255,0.5);
+
       }
+
+      .playlist-item .play-button{
+        position:absolute;
+        bottom:0;
+        right:0;
+        opacity:.5;
+        text-align:center;
+        width:100%;
+      
+      }
+
+      .playlist-item .play-button img{
+        width: 100px;
+    display: inline-block;
+      }
+      .playlist-item p{
+        display:inline-block;
+        position:relative;
+        padding:10px;
+      }
+
+
       .playlist-item h3,.playlist-item p{
         color:#000;
         font-weight: bold;
@@ -148,6 +172,10 @@
         }
         .playlist-item img{
           max-height:60%;
+        }
+
+        .playlist-item .play-button img{
+          width: 200px;
         }
 
         #playlist-container h1{
@@ -232,6 +260,7 @@
               <a href="https://www.facebook.com/sams.muusic.collections/" target="_blank"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png"></a>
               <a href="https://www.instagram.com/sams.muusic.collections/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/174/174855.png"></a>
             </div>
+          <p class="total"></p>
         <div id="main"></div>
         <div id="top"><div style="clear:both"></div><h1>Yearly toplist</h1></div>
         <div id="decennium"><div style="clear:both"></div><h1>Sams Collection by decade</h1></div>
