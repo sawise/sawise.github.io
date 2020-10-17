@@ -4758,7 +4758,7 @@ function playlistLoop(item){
         
         $link_start = "<a href='"+value.external_urls.spotify+"' target='_blank'>";
         $link_end ="</a>";
-        $play_button = "<div class='play-button'><img  src='images/play.png'/></div>";
+        $play_button = "";//"<div class='play-button'><img  src='images/play.png'/></div>";
        
         if(yearRegex.test(value.name) && value.name != "Sams 2000+ Collection"){
           total += total+1;
