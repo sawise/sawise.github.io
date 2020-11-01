@@ -33,7 +33,9 @@
       }
       
       .store,.social{
-        margin:10px 0;
+        margin:20px 0;
+        padding-bottom:20px;
+        border-bottom: 2px dashed #b5e853;
       }
       
       header img{
@@ -54,7 +56,7 @@
       }
       
       .social img{
-        width:100px;
+        width:auto;
         height: 100px;
         display:inline-block;
       }
@@ -146,13 +148,13 @@ background-color: rgba(255,255,255,0.5);
         margin:10px;
         font-weight:bold;
       }
-      .menu p.toggled{
+      .menu p.toggled, .menu p:hover{
         text-decoration: underline;
-        font-weight:bold;
       }
 
       .main-text img{
-          width:200px;
+          width:auto;
+          height:200px;
         }
       
       @media (max-width: 992px){
@@ -182,10 +184,18 @@ background-color: rgba(255,255,255,0.5);
       margin: 60px 0 10px 0;
       }
       .main-text img{
-        width:31%;
+        width:30%;
       }
       }
       @media (max-width: 700px){
+
+        .main-text img{
+        width:80%;
+
+        height:unset;
+        display:block;
+        margin: 20px auto;
+      }
         .playlist-item{  
             width: 100%;
             margin: 0;
@@ -215,6 +225,7 @@ background-color: rgba(255,255,255,0.5);
         <p class="bouncin button">Bouncin Sam 2</p>
         <p class="gif button">Sam's GIF and Art Studio </p>
         <p class="music button">Sam's Music Collections</p>
+        <p class="youtube button">Sam's Gameplay</p>
       </div>
             <div class="main-text">
           <p>Here you can see my ongoing projects, 
@@ -223,7 +234,9 @@ background-color: rgba(255,255,255,0.5);
           <img class="bouncin button" src="https://lh3.googleusercontent.com/oLWUeCX2hkqNIaackWbEQSp3Pp1qZevhljMUUjugLkSJasv4H974lxjQqVDFUH1kRXw=s180-rw"/>
           <img class="gif button" src="https://scontent.fume1-1.fna.fbcdn.net/v/t1.0-9/119230629_100563691801278_5297343648469064301_o.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=kT1nqf133BQAX_eoK43&_nc_ht=scontent.fume1-1.fna&oh=8abd9783b61b625e974889b587c7b3f1&oe=5FAF2A59"/>
           <img class="music button" src="https://scontent.fume1-1.fna.fbcdn.net/v/t1.0-9/120408141_100291391850510_4071083865260740475_o.jpg?_nc_cat=101&_nc_sid=09cbfe&_nc_ohc=iMdLtcq8ppUAX9rOq2E&_nc_ht=scontent.fume1-1.fna&oh=2c5fa2db6274941a3b9132fd2520cb3c&oe=5FAF9F8D"/>
-          </div>
+          <img class="youtube button" src="images/button-youtube.jpg"/>
+          
+        </div>
             
             <div class="bouncin toggle">
               <p>In Bouncin Sam the task is to move around Sam and avoid Kiara by tilting the phone in the direction you want to move him. On your way to survival you can collect power ups to last longer.<br>See the trailer below. =)</p>
@@ -271,6 +284,25 @@ background-color: rgba(255,255,255,0.5);
         <div id="genre"><div style="clear:both"></div><h1>Sams Collection by genre</h1></div>
         <div id="tv-movie-game"><div style="clear:both"></div><h1>Sams Collection by tv/movie/game</h1></div>
         <div id="mood"><div style="clear:both"></div><h1>Sams Collection by mood</h1></div>
+        </div>
+
+        <div class="youtube toggle">
+          <p class="total">Here i'll share some of my gameplay videos. All my videos can be found by clicking the icon below</p>
+          <div class="social">
+            <a href="https://www.youtube.com/playlist?list=PLb6Gl_YAEBdk74XaOVxwVLUKEOrACW20f">
+              <img src="https://dwgolfklubb.se/wp-content/uploads/2017/01/YouTube-icon-full_color.png">
+            </a>
+          </div>
+          <h3>Among Us! (Android)</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLb6Gl_YAEBdk74XaOVxwVLUKEOrACW20f" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>Worms Battlegrounds (PS4)</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aOI7_ny5GaM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>Rayman Legends (PS4)</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/hfDi9XjdMwg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>Child Of Light (PS4)</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Q89hsBGYWPc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>Tomb Raider (PS4)</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/HWHT3Wnydgg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
