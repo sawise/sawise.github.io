@@ -43,7 +43,7 @@ function formatText(name){
 
 let output= '';
 dates.forEach(function(date, index) { 
-    output +='<div class="col-3" style="margin-bottom:10px">';
+    output +='<div class="col-3 mb-3">';
     output += date.date+"<br>";
     output += 'Morning: <i class=" wi '+date.morning+'"></i> '+formatText(date.morning)+'<br>';
     output += 'Day: <i class=" wi '+date.day+'"></i> '+formatText(date.day)+'<br>';
