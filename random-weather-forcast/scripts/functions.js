@@ -53,6 +53,5 @@ dates.forEach(function(date, index) {
 })
 $( document ).ready(function() {
     document.getElementById('weather-forcast').innerHTML = output;
-
 });
 console.log(dates);
