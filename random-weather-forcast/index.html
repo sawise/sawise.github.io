@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sam's math hack</title>
+        <title>Sam's random weather forecast</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="scripts/functions.js"></script>
         <script src="scripts/bootstrap.min.js"></script>
@@ -11,6 +11,9 @@
     </head>
     <body>
         <div class="container">
+            <h1 class="text-center">Sam's random weather forecast</h1>
+            <button type="button" class="btn btn-primary" onclick="generateForcast(true)">Generate new forecast</button>
+            <button type="button" class="btn btn-primary" onclick="generateForcast(true, true)">Sam's forcast</button>
             <div id="weather-forcast" class="row">
             </div>
           </div>
