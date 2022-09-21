@@ -256,7 +256,7 @@ function generateForcast(forceRefresh, myForecast){
         } else {
             for(let i = 0; i < 31; i++){
                 const date = new Date();
-                date.setDate(date.getDate() + 1+i)
+                date.setDate(date.getDate() + i)
                 let weatherForcast = {
                                         date: date.toDateString(),
                                         morning: random('m'),
